@@ -23,7 +23,7 @@
         android:layout_margin="50dp"
         android:ems="15"
         android:inputType="textEmailAddress"
-        android:hint="Votre adresse mail"
+        android:hint="Votre Loggin"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/accueil"

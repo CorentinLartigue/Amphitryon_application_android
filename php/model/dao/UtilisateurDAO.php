@@ -3,7 +3,7 @@ class UtilisateurDAO{
     
 	public static function authentification($login , $mdp){
 		try{
-			$sql = "select IDUTILISATEUR, LOGIN , MDP , IDSTATUT from UTILISATEUR 
+			$sql = "select IDUTILISATEUR, LOGIN , MDP, NOM, PRENOM, IDSTATUT from utilisateur 
 			where LOGIN= :login and MDP = :mdp " ;
 			$requetePrepa = DBConnex::getInstance()->prepare($sql);
 			$requetePrepa->bindParam("login", $login);

@@ -13,3 +13,8 @@
 .externalNativeBuild
 .cxx
 local.properties
+
+
+/app/src/main/res/xml/network_security_config.xml
+/app/src/main/AndroidManifest.xml
+/app/src/main/java/com/example/lamphitryon/MainActivity.java

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/numeroTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Numéro du plat: "
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/nomTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nom du plat: "
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/descriptifTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Description du plat: "
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/quantiteProposeeTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Quantité proposée: "
+            android:textStyle="bold" />
+
+
+        <TextView
+            android:id="@+id/quantiteVendueTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Quantité vendue: "
+            android:textStyle="bold" />
+
+
+    </LinearLayout>
+
+</LinearLayout>

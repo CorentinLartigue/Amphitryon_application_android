@@ -14,7 +14,69 @@
         android:theme="@style/Theme.Lamphitryon"
         tools:targetApi="31">
         <activity android:name=".MenuServeur"/>
-        <activity android:name=".MenuChefCuisinier"/>
+        <activity android:name=".MenuChefCuisinier"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="">
+            </meta-data>
+        </activity>
+        <activity android:name=".PlatsActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="">
+            </meta-data>
+        </activity>
+        <activity android:name=".AjouterPlatActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="">
+            </meta-data>
+        </activity>
+        <activity android:name=".ModifierPlatActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="">
+            </meta-data>
+        </activity>
+        <activity android:name=".ServicesActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="">
+            </meta-data>
+        </activity>
+        <activity android:name=".LeServiceParDates"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="">
+            </meta-data>
+        </activity>
+        <activity android:name=".LeServiceActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="">
+            </meta-data>
+        </activity>
+        <activity android:name=".AjouterPlatServiceActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="">
+            </meta-data>
+        </activity>
+        <activity android:name=".ModifierPlatServiceActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="">
+            </meta-data>
+        </activity>
         <activity
             android:name=".MainActivity"
             android:exported="true">

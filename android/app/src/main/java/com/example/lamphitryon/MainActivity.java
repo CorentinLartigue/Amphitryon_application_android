@@ -51,8 +51,9 @@ public class MainActivity extends AppCompatActivity {
         buttonQuitterAuthentification.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                    finish();
+                    System.exit(0);
 
-                MainActivity.this.finish();
             }
         });
     }
@@ -68,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
                 .build();
 
         Request request = new Request.Builder()
-                .url("http://10.100.0.6/~ylesgourgues/php/controleurs/authentification.php")
+                .url("http://192.168.1.144/projet_perso/Amphitryon_application_android/php/controleurs/authentification.php")
                 .post(formBody)
                 .build();
 
@@ -83,20 +84,19 @@ public class MainActivity extends AppCompatActivity {
                 if (responseStr.compareTo("false")!=0){
                     try {
                         JSONObject utilisateur = new JSONObject(responseStr);
-                        Log.d("Test",utilisateur.getString("LOGIN") + " est  connecté");
+                        Log.d("TestConnexion",utilisateur.getString("NOM") + " est  connecté");
                         if(utilisateur.getString("IDSTATUT").compareTo("2")==0) {
                             Intent intent = new Intent(MainActivity.this, MenuChefCuisinier.class);
-                            intent.putExtra("UTILISATEUR", utilisateur.toString());
+                            intent.putExtra("utilisateur", utilisateur.toString());
                             startActivity(intent);
                         }
                         else if(utilisateur.getString("IDSTATUT").compareTo("1")==0) {
                             Intent intent = new Intent(MainActivity.this, MenuServeur.class);
-                            intent.putExtra("UTILISATEUR", utilisateur.toString());
+                            intent.putExtra("utilisateur", utilisateur.toString());
                             startActivity(intent);
                         }
                     }
                     catch(JSONException e){
-                        // Toast.makeText(MainActivity.this, "Erreur de connexion !!!! !", Toast.LENGTH_SHORT).show();
                         Log.d("Test",e.getMessage());
                     }
                 } else {

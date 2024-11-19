@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".ModifierPlatServiceActivity">
+
+    <ImageView
+        android:id="@+id/accueil"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:layout_marginTop="32dp"
+        android:src="@drawable/accueil"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="0dp"/>
+
+    <TextView
+        android:id="@+id/textIdentification"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="Nom du plat"
+        android:textStyle="bold"
+        android:textSize="18dp"
+
+        android:gravity="center"
+        android:layout_gravity="center_horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/accueil" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Quantité Proposée"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:layout_marginTop="28dp"/>
+
+    <EditText
+        android:id="@+id/editQuantiteProposee"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+
+        android:hint="Quantite Proposée" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Quantité Vendue"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:layout_marginTop="20dp"/>
+
+    <EditText
+        android:id="@+id/editTextQuantiteVendue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:hint="Quantite Vendue" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Prix de Vente"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:layout_marginTop="20dp"/>
+
+    <EditText
+        android:id="@+id/editTextPrixVente"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+
+        android:hint="Prix de vente"/>
+
+    <Button
+        android:id="@+id/ModifierPlat"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="Modifier Plat"
+        android:layout_gravity="center"
+        android:textSize="18sp"
+        android:layout_marginTop="40dp" />
+
+    <Button
+        android:id="@+id/buttonQuitterModifierPlat"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="QUITTER"
+        android:textSize="18sp"
+        android:layout_gravity="center" />
+
+</LinearLayout>

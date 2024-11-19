@@ -1,21 +1,19 @@
 package com.example.lamphitryon;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import android.util.Log;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import org.json.JSONArray;
+
 import org.json.JSONException;
 import org.json.JSONObject;
-
-import java.io.IOException;
-import java.util.ArrayList;
-
-import javax.security.auth.callback.Callback;
 
 public class MenuChefCuisinier extends AppCompatActivity {
 
@@ -23,71 +21,50 @@ public class MenuChefCuisinier extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chefcuisinier);
-        /*
+
         try {
-            listeClasses();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        */
-    }
-/*
-    public void listeClasses() throws IOException {
+            final JSONObject utilisateur = new JSONObject(getIntent().getStringExtra("utilisateur"));
 
-        OkHttpClient client = new OkHttpClient();
-        ArrayList arrayListNomClasses = new ArrayList<String>();
+            final TextView textIdentification = findViewById(R.id.textIdentification);
+            String texteIdentification = utilisateur.getString("NOM") + " " + utilisateur.getString("PRENOM");
+            textIdentification.setText(texteIdentification);
 
-        Request request = new Request.Builder()
-                .url("http://da5/Tp_AppEtudiant/EtudiantScript/controleurs/lesClasses.php")
-                .build();
+            final Button btnLesPlats = findViewById(R.id.btnLesPlats);
+            btnLesPlats.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(MenuChefCuisinier.this, PlatsActivity.class);
+                    startActivity(intent);
 
-        Call call = client.newCall(request);
-        call.enqueue(new Callback() {
-
-            public void onResponse(Call call, Response response) throws IOException {
-                String responseStr = response.body().string();
-                JSONArray jsonArrayClasses = null;
-                try {
-                    jsonArrayClasses = new JSONArray(responseStr);
-
-                    for (int i = 0; i < jsonArrayClasses.length(); i++) {
-                        JSONObject jsonClasse = null;
-                        jsonClasse = jsonArrayClasses.getJSONObject(i);
-                        arrayListNomClasses.add(jsonClasse.getString("nomClasse"));
-                    }
-                } catch (JSONException e) {
-                    e.printStackTrace();
                 }
+            });
 
-                ListView listViewClasses = findViewById(R.id.listViewClasses);
+            final Button btnLesServices = findViewById(R.id.btnLesServices);
+            btnLesServices.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(MenuChefCuisinier.this, ServicesActivity.class);
+                    startActivity(intent);
 
-                ArrayAdapter<String> arrayAdapterClasses = new ArrayAdapter<String>(MenuClasses.this, android.R.layout.simple_list_item_1, arrayListNomClasses);
+                }
+            });
 
-                listViewClasses.setAdapter(arrayAdapterClasses);
+            final Button buttonQuitterMenuChefCuisinier = (Button) findViewById(R.id.buttonQuitterMenuChefCuisinier);
+            buttonQuitterMenuChefCuisinier.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(MenuChefCuisinier.this, MainActivity.class);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                    startActivity(intent);
+                    finish();
+                }
+            });
 
-            }
 
-            public void onFailure(Call call, IOException e) {
-                Log.d("Test", "erreur!!! connexion impossible");
-            }
-
-        });
-
-
+        } catch (JSONException e) {
+            Toast.makeText(MenuChefCuisinier.this, e.getMessage(), Toast.LENGTH_LONG).show();
+            Log.d("testaffichage",e.getMessage());
+        }
     }
 
-    JSONArray finalJsonArrayClasses = jsonArrayClasses;
-
-    listViewClasses.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-    @Override
-    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        try {
-            JSONObject uneClasse = finalJsonArrayClasses.getJSONObject(position);
-            Intent intent = new Intent(ClassesActivity.this, EtudiantsUneClasseActivity.class);
-            intent.putExtra("uneClasse" , uneClasse.toString());
-            startActivity(intent);
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-    }});*/
 }

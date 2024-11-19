@@ -1,7 +1,15 @@
 <?php
 class CategorieDAO{
     public static function afficherCategorie(){
-        $requetePrepa =DBConnex::getInstance()->prepare("SELECT NOMCATEG FROM CATEGORIEPLAT");
-        $requetePrepa -> execute();
+        try{
+            $requetePrepa =DBConnex::getInstance()->prepare("SELECT IDCATEG,NOMCATEG FROM categorieplat");
+            $requetePrepa -> execute();
+            $liste = $requetePrepa->fetchAll(PDO::FETCH_ASSOC);
+                
+        }catch(Exception $e){
+            $liste = "";
+        }
+        return $liste;   
     }
+
 }
