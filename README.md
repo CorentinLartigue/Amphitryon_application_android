@@ -22,9 +22,9 @@ Le projet est divisé en deux parties principales :
 ## Prérequis
 
 Clonez ce dépôt sur votre machine locale :
-   ```bash
-   git clone https://github.com/CorentinLartigue/M2L_site_statique.git
-
+   ``` `bash
+git clone https://github.com/CorentinLartigue/M2L_site_statique.git 
+ ``` `
 ### Backend PHP
 1. **Installer WampServer** : Téléchargez et installez WampServer pour gérer Apache, MySQL et PHP localement.
 2. **Créer un VirtualHost** : Lancez WampServer et créez un VirtualHost dans la gestion des VirtualHosts pour l'URL où vous stockez votre dossier PHP.
