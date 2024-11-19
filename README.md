@@ -23,7 +23,8 @@ Le projet est divisé en deux parties principales :
 
 Clonez ce dépôt sur votre machine locale :
 
-```bash git clone https://github.com/CorentinLartigue/Amphitryon_application_android.git ```
+ 
+```git clone https://github.com/CorentinLartigue/Amphitryon_application_android.git```
 
 ### Backend PHP
 1. **Installer WampServer** : Téléchargez et installez WampServer pour gérer Apache, MySQL et PHP localement.
